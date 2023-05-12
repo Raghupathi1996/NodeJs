@@ -51,6 +51,7 @@
           const { data } = await axios.get('/api/people')
 
           const people = data.data.map((person) => {
+            // console.log("frontend", person)
             return `<h5>${person.name}</h5>`
           })
           result.innerHTML = people.join('')
@@ -69,6 +70,7 @@
 
         try {
           const { data } = await axios.post('/api/people', { name: nameValue })
+          console.log("data from the backend- Printing at the front end", data)
           const h5 = document.createElement('h5')
           h5.textContent = data.person
           result.appendChild(h5)
