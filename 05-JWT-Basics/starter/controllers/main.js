@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken')
 const { BadRequestError } = require('../errors')
+const { StatusCodes } = require('http-status-codes')
 
 
 const login = async (req, res) => {
@@ -15,7 +16,7 @@ const login = async (req, res) => {
     {
         expiresIn: '30d',
     })
-    res.status(200).json({msg: 'user created', token})  
+    res.status(StatusCodes.OK).json({msg: 'user created', token})  
     // res.send('Fake Login/Register/Signup Route')
 }
 

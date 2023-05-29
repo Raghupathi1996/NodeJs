@@ -3,19 +3,20 @@ const getAllJobs = async (req, res) => {
 }
 
 const getJob = async (req, res) => {
-    res.send('get all jobs')
+    res.send('get job')
 }
 
 const createJob = async (req, res) => {
-    res.send('get all jobs')
+    console.log(req.user);
+    res.json(req.user)
 }
 
 const updateJob = async (req, res) => {
-    res.send('get all jobs')
+    res.send('update job')
 }
 
 const deleteJob = async (req, res) => {
-    res.send('get all jobs')
+    res.send('delete jobs')
 }
 module.exports = {
     getAllJobs,
