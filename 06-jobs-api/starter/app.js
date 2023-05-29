@@ -46,3 +46,8 @@ const start = async () => {
 };
 
 start();
+
+
+// MONGO_URI=mongodb+srv://raghupathijan01:India9900228680@cluster0.8tmq5i6.mongodb.net/06-JOBS-API?retryWrites=true&w=majority&ssl=true
+// JWT_SECRET='u8x/A?D(G+KbPeShVmYp3s6v9y$B&E)H'
+// JWT_LIFETIME = '30d'
