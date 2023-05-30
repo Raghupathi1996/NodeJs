@@ -13,6 +13,12 @@ const register = async (req, res) => {
 
     // the mongoDB validor will be used in this project
     const user = await User.create({...req.body})
+    // console.log("creation of duplicate", user); // since MongoDB validation is used here the
+    // user is not given any values
+
+    if(!user) {
+        throw new BadRequestError(`Duplicate Value entered at email field`)
+    }
     const token = user.createJWT()
     res.status(StatusCodes.CREATED).json({user:{name: user.getName()}, token})
 }
