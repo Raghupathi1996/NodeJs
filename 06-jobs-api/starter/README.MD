@@ -67,3 +67,27 @@ Swagger UI
       required: true
       description: the job id
 ```
+
+
+## Web Attacks and their Prevention
+
+### Attacks 
+
+#### XSS - Cross site Scripting attack
+- It allows the attacker to inject client side scripting which enters in to the web page
+
+- Preventation - 
+- web application firewall (WAF) - filter malicious and proper normal code.
+- configure and set the rules of WAF to prevent XSS
+
+#### DDoS - Distributed Denial of service attack
+The malious user tries to make a machine or n/w resource unavailable to user.
+
+- prevention - 
+1. Reduce attack surface area - We want to ensure that we do not expose our application or resources to ports, protocols or applications from where they do not expect any communication
+2. Plan for scale - wo key considerations for mitigating large scale volumetric DDoS attacks are bandwidth (or transit) capacity and server capacity to absorb and mitigate attacks.
+3. Know what is normal and abnormal traffic - The traffic as our host can handle without affecting availabiltiy.
+4. Deply Firewalls for Sophisticated Application attacks
+5. 
+load balancer, redis, etc ..
+A reliable and well reviewed DDoS protection tool for the best defence.
