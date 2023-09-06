@@ -1,0 +1,38 @@
+version: '3.7'
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: server-taskbar
+    container_name: my-nodejs-server
+    # target: ${ENV}
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    depends_on:
+      - mongo-db
+
+
+  mongo-db:
+    image: mongo:4.4.4-bionic
+    container_name: $MONGO_HOSTNAME_1
+    restart: unless-stopped
+    env_file: .env
+    # security:
+      # authorization: enabled
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=$MONGO_USERNAME
+      - MONGO_INITDB_ROOT_PASSWORD=$MONGO_PASSWORD
+    ports:
+      - 27017:27017
+    volumes:
+      - dbdata:/data/db
+  
+volumes:
+  dbdata:
+  node_modules:
