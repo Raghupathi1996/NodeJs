@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const jobScheme = new mongoose.Schema({
+const jobSchema = new mongoose.Schema({
     title : {
         type : String,
         required : [true, 'Please enter the Job title'],
@@ -100,4 +100,4 @@ const jobScheme = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Jobs', jobScheme)
+module.exports = mongoose.model('Jobs', jobSchema)
