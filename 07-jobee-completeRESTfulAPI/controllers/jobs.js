@@ -9,6 +9,7 @@ exports.getJobs = (req, res, next) => {
 }
 
 // Create a new Job => /api/v1/job/new
+
 exports.newJob = async (req,res, next) => {
     try{
         const job = await Job.create(req.body)

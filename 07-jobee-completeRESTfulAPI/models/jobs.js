@@ -73,7 +73,6 @@ const jobSchema = new mongoose.Schema({
         type : Number,
         default : 1
     },
-    experience : {
         type : String,
         required : true,
         enum : {
@@ -106,4 +105,3 @@ const jobSchema = new mongoose.Schema({
 })
 
 module.exports = mongoose.model('Jobs', jobSchema)
-
