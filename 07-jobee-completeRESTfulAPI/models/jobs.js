@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const validator = require('validator')
 
 const jobSchema = new mongoose.Schema({
     title : {
@@ -68,7 +69,11 @@ const jobSchema = new mongoose.Schema({
             message : ',Please select the correct options for Education'
         }
     },
-    position : {
+    position:{
+        type : Number,
+        default : 1
+    },
+    experience : {
         type : String,
         required : true,
         enum : {
@@ -92,7 +97,7 @@ const jobSchema = new mongoose.Schema({
     },
     lastDate : {
         type : Date,
-        default : new Date().setDate(new Date().getdate() + 7)
+        default : new Date().setDate(new Date().getDate() + 7)
     },
     applicantsApplied : {
         type : [Object],

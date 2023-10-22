@@ -14,7 +14,7 @@ const jobs = require('./routes/jobs')
 
 app.use(express.json())
 
-app.use('/api', jobs)
+app.use('/api/v1', jobs)
 
 const PORT = process.env.PORT || 3000
 
