@@ -66,38 +66,39 @@ const jobSchema = new mongoose.Schema({
                 'PhD'
             ],
             message : ',Please select the correct options for Education'
-        },
-        position : {
-            type : String,
-            required : true,
-            enum : {
-                values : [
-                    'No Experience',
-                    '1 Year or less',
-                    '1 Year - 2 Year',
-                    '2 Year - 5 Year',
-                    '5 Years+'
-                ],
-                message : 'Please select correct options for Experience'
-            }
-        },
-        salary : {
-            type : Number,
-            required : [true, 'Please enter expected salary for this Job']
-        },
-        postingDate : {
-            type : Date,
-            default : Date.now
-        },
-        lastDate : {
-            type : Date,
-            default : new Date().setDate(new Date().getdate() + 7)
-        },
-        applicantsApplied : {
-            type : [Object],
-            select : false
         }
+    },
+    position : {
+        type : String,
+        required : true,
+        enum : {
+            values : [
+                'No Experience',
+                '1 Year or less',
+                '1 Year - 2 Year',
+                '2 Year - 5 Year',
+                '5 Years+'
+            ],
+            message : 'Please select correct options for Experience'
+        }
+    },
+    salary : {
+        type : Number,
+        required : [true, 'Please enter expected salary for this Job']
+    },
+    postingDate : {
+        type : Date,
+        default : Date.now
+    },
+    lastDate : {
+        type : Date,
+        default : new Date().setDate(new Date().getdate() + 7)
+    },
+    applicantsApplied : {
+        type : [Object],
+        select : false
     }
 })
 
 module.exports = mongoose.model('Jobs', jobSchema)
+

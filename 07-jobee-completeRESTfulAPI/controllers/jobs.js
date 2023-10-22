@@ -6,3 +6,6 @@ exports.getJobs = (req, res, next) => {
         message : 'This route will display all jobs in future'
     })
 }
+
+// Create a new Job => /api/v1/job/new
+// exports.newJob = (req, )
