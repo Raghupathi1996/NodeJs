@@ -22,7 +22,7 @@ services:
     image: mongo:4.4.4-bionic
     container_name: $MONGO_HOSTNAME_1
     restart: unless-stopped
-    env_file: .env
+    env_file: .env.docker
     # security:
       # authorization: enabled
     environment:

@@ -46,3 +46,32 @@ example - GET /user insead of /getalluser
 
 ## Cast error
 Evaluating the syntax of the data searched in the MongoDB
+
+
+# DB Migrations Notes
+- `npm install mysql --save
+- 'sudo npm install -g db-migrate
+sudo npm install db-migrate-mysql --save`
+Create following dirs:
+config
+migrations
+Create dev.json, test.json, prod.json in config directory:
+{
+"dev": {
+"host": "***amazonaws.com",
+"user": "sa",
+"password": "",
+"database": "",
+"driver": "mysql",
+"multipleStatements": true
+}, "sql-file": true
+}
+Create the first migration
+`db-migrate create seed --config ./config/dev.json`
+Add SQL statements to {up|down}.sql files.
+Test migration:
+- `db-migrate up --config ./config/test.json'
+- `db-migrate down --config ./config/test.json'
+Run the migration in prod:
+- `db-migrate up --config ./config/prod.json'
+db-migrate down --config ./config/prod.json

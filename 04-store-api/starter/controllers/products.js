@@ -8,7 +8,7 @@ const getAllProductsStatic = async (req,res) => {
 }
 
 const getAllProducts = async (req,res) => {
-    console.log(req.query)
+    console.log("req",req.query)
     const { featured, company, name, sort, fields, numericFilters } = req.query
     const queryObject = {}
     if(featured) {

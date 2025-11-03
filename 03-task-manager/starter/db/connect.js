@@ -22,13 +22,18 @@ let url;
 const environment = process.env.ENVIRONMENT.toLowerCase();
 
 switch (environment) {
-case 'development': {
-  console.log("Development!!!!!")
+case 'development-docker': {
+  console.log("Development-docker!!!!!")
   url = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOSTNAME_1}:${MONGO_PORT_1}/${MONGO_DB}?authSource=admin`;
   break;
 }
 case 'production': {
   console.log("Production**")
+  url = process.env.MONGO_URI;
+  break;
+}
+case 'development': {
+  console.log("Development!!!!!")
   url = process.env.MONGO_URI;
   break;
 }
